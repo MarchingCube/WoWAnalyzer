@@ -38,6 +38,9 @@ const appRoutes = createRoutesFromElements(
       <Route path="*" lazy={() => import('./routes/not-found')} />
     </Route>
     <Route path="support-stats" lazy={() => import('./routes/support-stats')} />
+    {import.meta.env.DEV && (
+      <Route path="dev/components" lazy={() => import('./routes/dev-components')} />
+    )}
   </Route>,
 );
 
